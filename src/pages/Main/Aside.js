@@ -12,7 +12,7 @@ import { faCirclePlay } from '@fortawesome/free-regular-svg-icons';
 
 const Aside = () => {
   return (
-    <ul className="fixed top-0 left-0 h-full p-2 ">
+    <ul className="hidden fixed left-0 h-full p-2 top-[4rem] sm:block">
       {ASIDE_MENU.map(info => (
         <li
           key={info.id}
