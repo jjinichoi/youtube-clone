@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const VideoItems = ({ video }) => {
   const commaFormat = () => {
@@ -34,20 +35,22 @@ const VideoItems = ({ video }) => {
 
   return (
     <li key={video.id} className="flex flex-col cursor-pointer">
-      <img
-        className="rounded-xl"
-        src={video.snippet.thumbnails.medium.url}
-        alt="썸네일"
-      />
-      <h1 className="py-1 overflow-hidden text-lg font-semibold leading-tight text-ellipsis whitespace-nowrap">
-        {video.snippet.title}
-      </h1>
-      <div className="text-[#606060] text-sm">
-        <p>{video.snippet.channelTitle}</p>
-        <span>
-          {commaFormat()}회 · {timeForToday(video.snippet.publishedAt)}
-        </span>
-      </div>
+      <Link to={`/watch/${video.id}`}>
+        <img
+          className="w-full rounded-xl"
+          src={video.snippet.thumbnails.medium.url}
+          alt="썸네일"
+        />
+        <h1 className="py-1 overflow-hidden text-lg font-semibold leading-tight text-ellipsis whitespace-nowrap">
+          {video.snippet.title}
+        </h1>
+        <div className="text-[#606060] text-sm">
+          <p>{video.snippet.channelTitle}</p>
+          <span>
+            {commaFormat()}회 · {timeForToday(video.snippet.publishedAt)}
+          </span>
+        </div>
+      </Link>
     </li>
   );
 };
