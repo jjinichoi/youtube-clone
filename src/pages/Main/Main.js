@@ -13,7 +13,7 @@ const Main = () => {
   return (
     <div className="flex flex-row">
       <Aside />
-      <div className="p-8 ml-[3.5rem]">
+      <div className="p-8  mt-[4rem] sm:ml-[3.5rem]">
         <ul className="grid grid-cols-1 gap-6 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 ">
           {videoListDatas?.items?.map(video => (
             <VideoItems key={video.id} video={video} />
