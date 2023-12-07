@@ -7,7 +7,7 @@ const Main = () => {
   const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
 
   const { getData: videoListDatas } = useFetch(
-    `https://youtube.googleapis.com/youtube/v3/videos?part=contentDetails,snippet,statistics&chart=mostPopular&regionCode=KR&maxResults=20&key=${apiKey}`,
+    `https://youtube.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=KR&maxResults=20&key=${apiKey}`,
   );
 
   return (

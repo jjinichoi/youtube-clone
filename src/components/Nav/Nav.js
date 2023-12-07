@@ -10,7 +10,7 @@ import me from '../../images/me.jpeg';
 
 const Nav = () => {
   return (
-    <div className="fixed bg-white w-full h-[4rem] px-8">
+    <div className="fixed bg-white w-full h-[4rem] px-8 z-10">
       <div className="flex items-center justify-center h-full sm:justify-between">
         <Link to="/" className="hidden sm:block">
           <img
