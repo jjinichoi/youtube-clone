@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Main from './pages/Main/Main';
+import VideoList from './components/VideoList/VideoList';
 import Nav from './components/Nav/Nav';
-import VideoDetail from './pages/VideoDetail/VideoDetail';
+import VideoDetail from './components/VideoDetail/VideoDetail';
 
 import './index.css';
 
@@ -11,7 +11,7 @@ const Router = () => {
     <BrowserRouter>
       <Nav />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<VideoList />} />
         <Route path="/watch/:videoId" element={<VideoDetail />} />
       </Routes>
     </BrowserRouter>

@@ -1,14 +1,16 @@
 import React from 'react';
 import useFetch from '../../Hooks/useFetch';
 import Aside from './Aside';
-import VideoItems from './VideoItems';
+import VideoItems from '../VideoItems/VideoItems';
 
-const Main = () => {
+const VideoList = ({ searchVideoListDatas }) => {
   const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
 
   const { getData: videoListDatas } = useFetch(
     `https://youtube.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=KR&maxResults=20&key=${apiKey}`,
   );
+
+  console.log(searchVideoListDatas);
 
   return (
     <div className="flex flex-row">
@@ -24,4 +26,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default VideoList;
