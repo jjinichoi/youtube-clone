@@ -13,7 +13,8 @@ const VideoDetail = () => {
       `https://youtube.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&regionCode=KR&id=${videoId}&key=${apiKey}`,
     )
       .then(res => res.json())
-      .then(data => setVideoDetailDatas(data.items[0]));
+      .then(data => setVideoDetailDatas(data.items[0]))
+      .catch(error => console.error(error));
   }, [videoId]);
 
   const commaFormat = () => {

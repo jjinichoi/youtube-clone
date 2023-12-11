@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const VideoItems = ({ video }) => {
   const commaFormat = () => {
@@ -33,9 +33,21 @@ const VideoItems = ({ video }) => {
     return `${Math.floor(betweenTimeDay / 365)}년 전`;
   };
 
+  const location = useLocation();
+
+  const pathChecked = () => {
+    if (location.pathname === '/') {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return (
     <li key={video.id} className="flex flex-col cursor-pointer">
-      <Link to={`/watch/${video.id}`}>
+      <Link
+        to={pathChecked() ? `/watch/${video.id}` : `/watch/${video.id.videoId}`}
+      >
         <img
           className="w-full rounded-xl"
           src={video.snippet.thumbnails.medium.url}
